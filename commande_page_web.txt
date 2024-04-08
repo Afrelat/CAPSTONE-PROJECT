@@ -1,0 +1,40 @@
+119 : 
+
+On installe le serveur HTTP d'Apache 
+
+commande : 
+	- yum install -y httpd 
+
+Création d'un dossier pour importer la page WEB
+
+commande : 
+	- mkdir aws_web 
+
+Importe du lien Git 
+
+commande : 
+	- wget https://github.com/pascalito007/ynov-resources/archive/refs/heads/main.zip
+
+On unzip le fichier  
+
+commande : 
+	- unzip main.zip
+
+On va dans le repertoire ou se trouve la page web  
+
+commande : 
+	- cd ynov-resources-main/2024/b3/cloud/sample-app/
+
+On depolace les fichier dans le repertoire html de apache  
+
+commande : 
+	- mv * /var/www/html/
+
+pour finir on activer le service hhtpd et on le start  
+
+commande : 
+	- systemctl enable httpd 
+	- systemectl start httpd
+
+on peux verifier son etat avec la commande :   
+	- systemctl status httpd
